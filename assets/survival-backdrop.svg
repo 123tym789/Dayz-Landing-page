@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#b4b7b3"/>
+      <stop offset=".38" stop-color="#626763"/>
+      <stop offset="1" stop-color="#171a18"/>
+    </linearGradient>
+    <linearGradient id="ground" x2="0" y2="1">
+      <stop stop-color="#292d2a"/>
+      <stop offset="1" stop-color="#090b0a"/>
+    </linearGradient>
+    <linearGradient id="mist" x2="0" y2="1">
+      <stop stop-color="#d0d2ce" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#d0d2ce" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .16"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1800v1100H0z"/>
+  <path fill="url(#mist)" d="M0 285q350-90 700 5t1100-5v420H0z"/>
+  <path fill="#303532" d="M0 475q150-65 300 0t290 0q180-115 355-3t320-5q140-78 270 0t265-12v300H0z"/>
+  <path fill="#202421" d="M0 570q135-85 260 0t260-15q145-112 300 8t280-15q130-80 270 5t250-20q115-55 180 5v310H0z"/>
+  <path fill="url(#ground)" d="M0 680q260-90 515 4t490-10q245-100 480 7t315-10v429H0z"/>
+  <g fill="#111412">
+    <path d="M55 708 111 476l57 232zm32-136 31-133 32 133zm570 114 69-292 72 292zm39-170 31-147 32 147zm714 177 68-286 68 286zm41-163 28-146 29 146zm245 178 57-236 59 236zm33-135 25-120 27 120z"/>
+    <path d="M0 747q85-108 166-5l86 116H0zm290 9q75-105 148-8l78 100H260zm1090-20q82-114 164-10l88 132h-270zm260 32q78-95 150 0l70 86h-230z"/>
+  </g>
+  <g fill="#080a09" opacity=".92">
+    <path d="M0 826q120-61 250 7l76 92H0zm1450 14q118-80 230 0l120 115h-390z"/>
+    <path d="M0 1000q330-65 640 4t650-9q285-48 510 5v100H0z"/>
+  </g>
+  <g transform="translate(240 795)" fill="#080a09" opacity=".92">
+    <path d="m0 76 26-42q13-20 39-22l154-5q36 1 53 22l34 38 35 10 8 39H-14l5-30z"/>
+    <path fill="#363a37" d="m78 21 16-1-15 34H39l14-21q8-11 25-12zm42-2 91-2q17 1 29 15l18 21-154 1z"/>
+    <circle cx="49" cy="114" r="21" fill="#050606"/>
+    <circle cx="49" cy="114" r="9" fill="#393d3a"/>
+    <circle cx="278" cy="114" r="21" fill="#050606"/>
+    <circle cx="278" cy="114" r="9" fill="#393d3a"/>
+  </g>
+  <path fill="#050606" opacity=".34" d="M0 0h1800v1100H0z"/>
+  <path fill="#fff" opacity=".14" filter="url(#grain)" d="M0 0h1800v1100H0z"/>
+</svg>

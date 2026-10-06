@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student-made DayZ survival-themed landing page.">
+  <title>DAYZ // SURVIVE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="DAYZ Survive home">
+      <span class="brand-mark">DZ</span>
+      <span>DAYZ<span class="brand-slash"> //</span> SURVIVE</span>
+    </a>
+
+    <p class="sidebar-status"><span></span> FIELD ACCESS // ONLINE</p>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <a href="#top">News</a>
+      <a href="#gear">Gear</a>
+      <a href="#maps">Maps</a>
+      <a href="#clothing">Clothing</a>
+      <a href="#characters">Survivor</a>
+      <a href="#trailer">Trailer</a>
+      <a class="nav-cta" href="https://store.steampowered.com/app/221100/DayZ/" target="_blank" rel="noopener">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="particles" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> THE WORLD HAS FALLEN</p>
+        <h1 id="hero-title">SURVIVE.<br><em>ADAPT.</em><br>ENDURE.</h1>
+        <p class="hero-copy">
+          An unforgiving open-world survival experience where every decision matters,
+          resources are scarce, and the environment is just as dangerous as the infected.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="https://store.steampowered.com/app/221100/DayZ/" target="_blank" rel="noopener">
+            Download the Game <span>↗</span>
+          </a>
+          <a class="btn btn-ghost" href="#trailer">Watch Trailer <span>▶</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>01</strong><span>Open world</span></div>
+          <div><strong>24/7</strong><span>Survival mindset</span></div>
+          <div><strong>∞</strong><span>Ways to survive</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-cue">SCROLL <span>↓</span></div>
+    </section>
+
+    <section class="section intro" id="about">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> 01 // THE EXPERIENCE</p>
+        <h2>WELCOME TO <span>CHERNARUS.</span></h2>
+      </div>
+
+      <div class="intro-grid">
+        <div class="intro-copy">
+          <p class="lead">
+            DayZ drops you into a post-apocalyptic world with no scripted path to safety.
+            Explore abandoned settlements, manage your health and resources, and decide who
+            you can trust.
+          </p>
+          <p>
+            The environment keeps score. Hunger, thirst, illness, weather and exhaustion
+            can change a journey in seconds. The result is a survival experience where
+            getting through the next hour can be an achievement.
+          </p>
+
+          <div class="accordion" id="accordion">
+            <article class="accordion-item active">
+              <button class="accordion-trigger" aria-expanded="true">
+                <span>Food &amp; energy</span><b>+</b>
+              </button>
+              <div class="accordion-panel">
+                <p>Food restores energy and helps keep your survivor moving. Learn to manage supplies rather than wasting what you find.</p>
+              </div>
+            </article>
+            <article class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Water &amp; hydration</span><b>+</b>
+              </button>
+              <div class="accordion-panel">
+                <p>Hydration is part of the survival loop. Plan around reliable water sources and keep an eye on your status indicators.</p>
+              </div>
+            </article>
+            <article class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Illness &amp; recovery</span><b>+</b>
+              </button>
+              <div class="accordion-panel">
+                <p>Survival is more than avoiding danger. Poor conditions, contaminated supplies and injuries can affect your ability to keep going.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <figure class="stats-card">
+          <img src="assets/survival-stats.png" alt="DayZ survival status indicators for energy, water, blood, health and immunity">
+          <figcaption>Survival is a system. Watch your status before it becomes a problem.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section gear-section" id="gear">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow"><span></span> 02 // FIELD LOADOUT</p>
+          <h2>GEAR THAT <span>KEEPS YOU MOVING.</span></h2>
+        </div>
+        <div class="slider-controls">
+          <button id="prevGear" aria-label="Previous gear item">←</button>
+          <button id="nextGear" aria-label="Next gear item">→</button>
+        </div>
+      </div>
+
+      <div class="gear-slider" id="gearSlider">
+        <article class="gear-card active">
+          <div class="gear-icon">◈</div>
+          <p class="card-index">01 / NAVIGATION</p>
+          <h3>COMPASS</h3>
+          <p>Know your direction before the forest swallows the road behind you.</p>
+          <span class="card-tag">FIELD ESSENTIAL</span>
+        </article>
+        <article class="gear-card">
+          <div class="gear-icon">◉</div>
+          <p class="card-index">02 / HYDRATION</p>
+          <h3>WATER</h3>
+          <p>Hydration is a constant concern. Plan your route around resources.</p>
+          <span class="card-tag">SURVIVAL</span>
+        </article>
+        <article class="gear-card">
+          <div class="gear-icon">✚</div>
+          <p class="card-index">03 / MEDICAL</p>
+          <h3>FIRST AID</h3>
+          <p>Keep essential medical supplies ready when the unexpected happens.</p>
+          <span class="card-tag">RECOVERY</span>
+        </article>
+        <article class="gear-card">
+          <div class="gear-icon">◆</div>
+          <p class="card-index">04 / PROVISIONS</p>
+          <h3>FOOD</h3>
+          <p>Every calorie matters when you are travelling through a hostile world.</p>
+          <span class="card-tag">ENERGY</span>
+        </article>
+      </div>
+      <p class="section-note">Use the arrows to rotate through a survivor's essential field gear.</p>
+    </section>
+
+    <section class="section maps-section" id="maps">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> 03 // KNOW THE TERRAIN</p>
+        <h2>THE MAP IS <span>PART OF THE THREAT.</span></h2>
+      </div>
+
+      <div class="map-grid">
+        <button class="map-card" data-lightbox="assets/chernarus-map.png" data-caption="Chernarus+ — Topographic map">
+          <img src="assets/chernarus-map.png" alt="Chernarus topographic map from iZurvive">
+          <span class="map-overlay"><b>CHERNARUS+</b><small>TOPOGRAPHIC MAP · CLICK TO EXPAND</small></span>
+        </button>
+        <button class="map-card" data-lightbox="assets/livonia-map.png" data-caption="Livonia — Terrain map">
+          <img src="assets/livonia-map.png" alt="Livonia terrain map from iZurvive">
+          <span class="map-overlay"><b>LIVONIA</b><small>TERRAIN MAP · CLICK TO EXPAND</small></span>
+        </button>
+      </div>
+
+      <p class="source-note">
+        Map images supplied for this student project are credited to
+        <a href="https://izurvive.com/" target="_blank" rel="noopener">iZurvive</a>.
+      </p>
+    </section>
+
+    <section class="section clothing-section" id="clothing">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> 04 // STAY PREPARED</p>
+        <h2>CLOTHING IS <span>MORE THAN STYLE.</span></h2>
+      </div>
+      <div class="clothing-grid">
+        <article><span>01</span><h3>WARMTH</h3><p>Weather and exposure can change the way you approach a journey.</p></article>
+        <article><span>02</span><h3>STORAGE</h3><p>Choose clothing that helps you carry the supplies you actually need.</p></article>
+        <article><span>03</span><h3>CONDITION</h3><p>Look after your equipment so your survival plan does not fall apart.</p></article>
+      </div>
+    </section>
+
+    <section class="section characters-section" id="characters">
+      <div class="character-panel">
+        <div>
+          <p class="eyebrow"><span></span> 05 // YOUR SURVIVOR</p>
+          <h2>EVERY SPAWN<br>IS A <span>NEW STORY.</span></h2>
+          <p>
+            Start with almost nothing. Explore, learn the terrain, build your routine,
+            and make decisions that shape every run.
+          </p>
+        </div>
+        <div class="character-orbit" aria-hidden="true">
+          <div class="orbit-ring"></div>
+          <div class="survivor-silhouette">◒</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trailer-section" id="trailer">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> 06 // WATCH</p>
+        <h2>SEE THE <span>WORLD FOR YOURSELF.</span></h2>
+      </div>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/fJmMbl3bqE0"
+          title="DayZ trailer"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> 07 // VISUAL LOG</p>
+        <h2>DOCUMENT THE <span>JOURNEY.</span></h2>
+      </div>
+      <div class="gallery-grid">
+        <button data-lightbox="assets/chernarus-map.png" data-caption="Chernarus terrain">
+          <img src="assets/chernarus-map.png" alt="Chernarus terrain">
+        </button>
+        <button data-lightbox="assets/livonia-map.png" data-caption="Livonia terrain">
+          <img src="assets/livonia-map.png" alt="Livonia terrain">
+        </button>
+        <button data-lightbox="assets/survival-stats.png" data-caption="Survival status system">
+          <img src="assets/survival-stats.png" alt="Survival status system">
+        </button>
+      </div>
+    </section>
+
+    <section class="download-banner">
+      <div>
+        <p class="eyebrow"><span></span> READY?</p>
+        <h2>YOUR STORY<br>STARTS <span>NOW.</span></h2>
+      </div>
+      <a class="btn btn-red btn-large" href="https://store.steampowered.com/app/221100/DayZ/" target="_blank" rel="noopener">
+        Download DayZ <span>↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark">DZ</span><span>DAYZ<span class="brand-slash"> //</span> SURVIVE</span></a>
+        <p class="footer-copy">A fan-made student project inspired by the survival atmosphere of DayZ.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#gear">Gear</a>
+        <a href="#maps">Maps</a>
+        <a href="#clothing">Clothing</a>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="https://store.steampowered.com/app/221100/DayZ/" target="_blank" rel="noopener">Steam</a>
+        <a href="https://izurvive.com/" target="_blank" rel="noopener">iZurvive</a>
+        <a href="https://www.youtube.com/embed/fJmMbl3bqE0" target="_blank" rel="noopener">Trailer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Student Project</span>
+      <span>DAYZ is a trademark of its respective owner. This site is unofficial and not affiliated with or endorsed by Bohemia Interactive.</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <figure>
+      <img id="lightboxImage" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
