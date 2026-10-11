@@ -360,7 +360,7 @@ document.querySelectorAll(
 
 const revealElements =
     document.querySelectorAll(
-        ".section-heading, .gear-card, .map-card, .clothing-grid article, .character-panel, .video-frame"
+        ".hero h1, .section-heading h2, .gear-card h3, .clothing-grid h3, .character-panel h2, .download-banner h2, .dashboard-heading h3, .footer h4, .gear-card, .map-card, .clothing-grid article, .character-panel, .video-frame"
     );
 
 

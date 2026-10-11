@@ -12,6 +12,30 @@
 </head>
 <body>
   <div class="noise"></div>
+  <svg class="icon-library" aria-hidden="true" focusable="false">
+    <symbol id="meter-thermometer" viewBox="0 0 24 24">
+      <path d="M14 14.8V5a4 4 0 0 0-8 0v9.8a7 7 0 1 0 8 0Z"/>
+      <path d="M10 5v12"/>
+    </symbol>
+    <symbol id="meter-lightning" viewBox="0 0 24 24">
+      <path d="m13.5 2-10 12h7l-.8 8L21 9.5h-7l1-7.5Z"/>
+    </symbol>
+    <symbol id="meter-apple" viewBox="0 0 24 24">
+      <path d="M12 7c-1.3-1.4-3.2-1.5-4.8-.8C3.3 7.8 3.9 14 6.4 18c1.5 2.4 3.3 3.7 5.6 2.7 2.3 1 4.1-.3 5.6-2.7 2.5-4 3.1-10.2-.8-11.8C15.2 5.5 13.3 5.6 12 7Z"/>
+      <path d="M12 7c-.1-2.2 1.1-3.7 3.3-4.5M12 7c-1.4-1.4-3-2-4.8-1.7"/>
+    </symbol>
+    <symbol id="meter-blood" viewBox="0 0 24 24">
+      <path d="M12 2.5S4.5 11.3 4.5 15.7a7.5 7.5 0 0 0 15 0C19.5 11.3 12 2.5 12 2.5Z"/>
+      <path d="M8.3 16a3.8 3.8 0 0 0 3.7 3"/>
+    </symbol>
+    <symbol id="meter-hydration" viewBox="0 0 24 24">
+      <path d="M8 3h8v3l2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8l2-2V3Z"/>
+      <path d="M9 3h6M9 16h6"/>
+    </symbol>
+    <symbol id="meter-health" viewBox="0 0 24 24">
+      <path d="M9 3H15V9H21V15H15V21H9V15H3V9H9V3Z"/>
+    </symbol>
+  </svg>
 
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="DAYZ Survive home">
@@ -27,7 +51,7 @@
 
     <nav class="nav" id="mainNav">
       <a href="#top">News</a>
-      <a href="#gear">Gear</a>
+      <a href="#gear">Medical Kit</a>
       <a href="#maps">Maps</a>
       <a href="#clothing">Clothing</a>
       <a href="#characters">Survivor</a>
@@ -87,43 +111,81 @@
           <div class="accordion" id="accordion">
             <article class="accordion-item active">
               <button class="accordion-trigger" aria-expanded="true">
-                <span>Food &amp; energy</span><b>+</b>
+                <span>Bleeding &amp; bandages</span><b>+</b>
               </button>
               <div class="accordion-panel">
-                <p>Food restores energy and helps keep your survivor moving. Learn to manage supplies rather than wasting what you find.</p>
+                <p>Bandages stop bleeding and protect wounds. Disinfect them when possible to reduce the risk of wound infection.</p>
               </div>
             </article>
             <article class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
-                <span>Water &amp; hydration</span><b>+</b>
+                <span>Injuries &amp; emergency care</span><b>+</b>
               </button>
               <div class="accordion-panel">
-                <p>Hydration is part of the survival loop. Plan around reliable water sources and keep an eye on your status indicators.</p>
+                <p>Epinephrine can wake an unconscious survivor and briefly boost stamina. Morphine can temporarily ease movement with a fracture, but does not heal it.</p>
               </div>
             </article>
             <article class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
-                <span>Illness &amp; recovery</span><b>+</b>
+                <span>Illness &amp; medical supplies</span><b>+</b>
               </button>
               <div class="accordion-panel">
-                <p>Survival is more than avoiding danger. Poor conditions, contaminated supplies and injuries can affect your ability to keep going.</p>
+                <p>Multivitamins temporarily support immunity. Keep your treatments together in a first aid pouch, which stores supplies but does not treat injuries itself.</p>
               </div>
             </article>
           </div>
         </div>
 
-        <figure class="stats-card">
-          <img src="assets/survival-stats.png" alt="DayZ survival status indicators for energy, water, blood, health and immunity">
-          <figcaption>Survival is a system. Watch your status before it becomes a problem.</figcaption>
-        </figure>
+        <section class="survival-dashboard" aria-labelledby="survival-dashboard-title">
+          <header class="dashboard-heading">
+            <div>
+              <span class="dashboard-indicator"></span>
+              <h3 id="survival-dashboard-title">SURVIVOR STATUS</h3>
+            </div>
+            <span class="dashboard-mode">FIELD READOUT // SAMPLE</span>
+          </header>
+          <div class="survival-meters">
+            <div class="survival-meter" role="img" aria-label="Temperature: 3 of 5">
+              <span class="meter-label">Temperature</span>
+              <span class="meter-icons" aria-hidden="true"><svg class="meter-icon is-active"><use href="#meter-thermometer"/></svg><svg class="meter-icon is-active"><use href="#meter-thermometer"/></svg><svg class="meter-icon is-active"><use href="#meter-thermometer"/></svg><svg class="meter-icon"><use href="#meter-thermometer"/></svg><svg class="meter-icon"><use href="#meter-thermometer"/></svg></span>
+              <span class="meter-value">03/05</span>
+            </div>
+            <div class="survival-meter" role="img" aria-label="Energy V1: 4 of 5">
+              <span class="meter-label">Energy V1</span>
+              <span class="meter-icons" aria-hidden="true"><svg class="meter-icon is-active"><use href="#meter-lightning"/></svg><svg class="meter-icon is-active"><use href="#meter-lightning"/></svg><svg class="meter-icon is-active"><use href="#meter-lightning"/></svg><svg class="meter-icon is-active"><use href="#meter-lightning"/></svg><svg class="meter-icon"><use href="#meter-lightning"/></svg></span>
+              <span class="meter-value">04/05</span>
+            </div>
+            <div class="survival-meter" role="img" aria-label="Energy V2: 4 of 5">
+              <span class="meter-label">Energy V2</span>
+              <span class="meter-icons" aria-hidden="true"><svg class="meter-icon is-active"><use href="#meter-apple"/></svg><svg class="meter-icon is-active"><use href="#meter-apple"/></svg><svg class="meter-icon is-active"><use href="#meter-apple"/></svg><svg class="meter-icon is-active"><use href="#meter-apple"/></svg><svg class="meter-icon"><use href="#meter-apple"/></svg></span>
+              <span class="meter-value">04/05</span>
+            </div>
+            <div class="survival-meter" role="img" aria-label="Blood level: 4 of 5">
+              <span class="meter-label">Blood level</span>
+              <span class="meter-icons" aria-hidden="true"><svg class="meter-icon is-active"><use href="#meter-blood"/></svg><svg class="meter-icon is-active"><use href="#meter-blood"/></svg><svg class="meter-icon is-active"><use href="#meter-blood"/></svg><svg class="meter-icon is-active"><use href="#meter-blood"/></svg><svg class="meter-icon"><use href="#meter-blood"/></svg></span>
+              <span class="meter-value">04/05</span>
+            </div>
+            <div class="survival-meter" role="img" aria-label="Hydration: 3 of 5">
+              <span class="meter-label">Hydration</span>
+              <span class="meter-icons" aria-hidden="true"><svg class="meter-icon is-active"><use href="#meter-hydration"/></svg><svg class="meter-icon is-active"><use href="#meter-hydration"/></svg><svg class="meter-icon is-active"><use href="#meter-hydration"/></svg><svg class="meter-icon"><use href="#meter-hydration"/></svg><svg class="meter-icon"><use href="#meter-hydration"/></svg></span>
+              <span class="meter-value">03/05</span>
+            </div>
+            <div class="survival-meter" role="img" aria-label="Health: 5 of 5">
+              <span class="meter-label">Health</span>
+              <span class="meter-icons" aria-hidden="true"><svg class="meter-icon is-active"><use href="#meter-health"/></svg><svg class="meter-icon is-active"><use href="#meter-health"/></svg><svg class="meter-icon is-active"><use href="#meter-health"/></svg><svg class="meter-icon is-active"><use href="#meter-health"/></svg><svg class="meter-icon is-active"><use href="#meter-health"/></svg></span>
+              <span class="meter-value">05/05</span>
+            </div>
+          </div>
+          <p class="dashboard-note">Monitor your condition. Every resource counts.</p>
+        </section>
       </div>
     </section>
 
     <section class="section gear-section" id="gear">
       <div class="section-heading split-heading">
         <div>
-          <p class="eyebrow"><span></span> 02 // FIELD LOADOUT</p>
-          <h2>GEAR THAT <span>KEEPS YOU MOVING.</span></h2>
+          <p class="eyebrow"><span></span> 02 // FIELD MEDIC</p>
+          <h2>KNOW YOUR <span>MEDICAL KIT.</span></h2>
         </div>
         <div class="slider-controls">
           <button id="prevGear" aria-label="Previous gear item">←</button>
@@ -133,35 +195,42 @@
 
       <div class="gear-slider" id="gearSlider">
         <article class="gear-card active">
-          <div class="gear-icon">◈</div>
-          <p class="card-index">01 / NAVIGATION</p>
-          <h3>COMPASS</h3>
-          <p>Know your direction before the forest swallows the road behind you.</p>
-          <span class="card-tag">FIELD ESSENTIAL</span>
+          <div class="gear-icon"><img src="assets/medical-bandage.png" alt="Bandage item as shown in DayZ"></div>
+          <p class="card-index">01 / WOUND CARE</p>
+          <h3>BANDAGE</h3>
+          <p>Dress wounds and stop bleeding. Disinfect bandages when you can to lower the risk of wound infection.</p>
+          <span class="card-tag">BLEED CONTROL</span>
         </article>
         <article class="gear-card">
-          <div class="gear-icon">◉</div>
-          <p class="card-index">02 / HYDRATION</p>
-          <h3>WATER</h3>
-          <p>Hydration is a constant concern. Plan your route around resources.</p>
-          <span class="card-tag">SURVIVAL</span>
+          <div class="gear-icon"><img src="assets/medical-epinephrine.png" alt="Epinephrine auto-injector item as shown in DayZ"></div>
+          <p class="card-index">02 / EMERGENCY</p>
+          <h3>EPINEPHRINE</h3>
+          <p>An emergency auto-injector that can wake an unconscious survivor and provide a short stamina boost.</p>
+          <span class="card-tag">AUTO-INJECTOR</span>
         </article>
         <article class="gear-card">
-          <div class="gear-icon">✚</div>
-          <p class="card-index">03 / MEDICAL</p>
-          <h3>FIRST AID</h3>
-          <p>Keep essential medical supplies ready when the unexpected happens.</p>
-          <span class="card-tag">RECOVERY</span>
+          <div class="gear-icon"><img src="assets/medical-morphine.png" alt="Morphine auto-injector item as shown in DayZ"></div>
+          <p class="card-index">03 / FRACTURE SUPPORT</p>
+          <h3>MORPHINE</h3>
+          <p>Temporarily helps a survivor move with a broken leg. It eases the effects, but does not heal the fracture.</p>
+          <span class="card-tag">AUTO-INJECTOR</span>
         </article>
         <article class="gear-card">
-          <div class="gear-icon">◆</div>
-          <p class="card-index">04 / PROVISIONS</p>
-          <h3>FOOD</h3>
-          <p>Every calorie matters when you are travelling through a hostile world.</p>
-          <span class="card-tag">ENERGY</span>
+          <div class="gear-icon"><img src="assets/medical-multivitamins.png" alt="Multivitamin pills item as shown in DayZ"></div>
+          <p class="card-index">04 / IMMUNITY</p>
+          <h3>MULTIVITAMINS</h3>
+          <p>Temporarily support your survivor's immune system and help resist illness. They are not a cure-all.</p>
+          <span class="card-tag">PILLS</span>
+        </article>
+        <article class="gear-card">
+          <div class="gear-icon"><img src="assets/medical-first-aid-pouch.png" alt="First aid pouch item as shown in DayZ"></div>
+          <p class="card-index">05 / STORAGE</p>
+          <h3>FIRST AID POUCH</h3>
+          <p>A compact container for carrying medical supplies. Keep treatment items together and ready to reach.</p>
+          <span class="card-tag">MEDICAL STORAGE</span>
         </article>
       </div>
-      <p class="section-note">Use the arrows to rotate through a survivor's essential field gear.</p>
+      <p class="section-note">Use the arrows to highlight a key item in your survivor's medical kit.</p>
     </section>
 
     <section class="section maps-section" id="maps">
@@ -171,12 +240,12 @@
       </div>
 
       <div class="map-grid">
-        <button class="map-card" data-lightbox="assets/chernarus-map.png" data-caption="Chernarus+ — Topographic map">
-          <img src="assets/chernarus-map.png" alt="Chernarus topographic map from iZurvive">
+        <button class="map-card" data-lightbox="assets/map-chernarus.png" data-caption="Chernarus+ — Topographic map">
+          <img src="assets/map-chernarus.png" alt="Chernarus topographic map screenshot from DayZ">
           <span class="map-overlay"><b>CHERNARUS+</b><small>TOPOGRAPHIC MAP · CLICK TO EXPAND</small></span>
         </button>
-        <button class="map-card" data-lightbox="assets/livonia-map.png" data-caption="Livonia — Terrain map">
-          <img src="assets/livonia-map.png" alt="Livonia terrain map from iZurvive">
+        <button class="map-card" data-lightbox="assets/map-livonia.png" data-caption="Livonia — Terrain map">
+          <img src="assets/map-livonia.png" alt="Livonia terrain map screenshot from DayZ">
           <span class="map-overlay"><b>LIVONIA</b><small>TERRAIN MAP · CLICK TO EXPAND</small></span>
         </button>
       </div>
@@ -189,18 +258,152 @@
 
     <section class="section clothing-section" id="clothing">
       <div class="section-heading">
-        <p class="eyebrow"><span></span> 04 // STAY PREPARED</p>
-        <h2>CLOTHING IS <span>MORE THAN STYLE.</span></h2>
+        <p class="eyebrow"><span></span> 04 // FIELD CLOTHING</p>
+        <h2>KNOW WHAT <span>YOU'RE WEARING.</span></h2>
+        <p class="clothing-intro">Compare the clothing shown in-game. Insulation, storage, and protection depend on the item and its current condition.</p>
       </div>
       <div class="clothing-grid">
-        <article><span>01</span><h3>WARMTH</h3><p>Weather and exposure can change the way you approach a journey.</p></article>
-        <article><span>02</span><h3>STORAGE</h3><p>Choose clothing that helps you carry the supplies you actually need.</p></article>
-        <article><span>03</span><h3>CONDITION</h3><p>Look after your equipment so your survival plan does not fall apart.</p></article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-press-vest.png" alt="Press vest shown in DayZ"></div>
+          <p class="card-index">01 / VEST</p>
+          <h3>PRESS VEST</h3>
+          <dl class="clothing-properties">
+            <div><dt>Slot</dt><dd>Vest</dd></div>
+            <div><dt>Protection</dt><dd>No Press Vest value in supplied table</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-bdu-jacket.png" alt="Camouflage BDU jacket shown in DayZ"></div>
+          <p class="card-index">02 / TOP</p>
+          <h3>BDU JACKET</h3>
+          <dl class="clothing-properties">
+            <div><dt>Item size</dt><dd>4 × 3 slots</dd></div>
+            <div><dt>Storage</dt><dd>6 × 4 · 24 slots</dd></div>
+            <div><dt>Weight</dt><dd>1.7 kg</dd></div>
+            <div><dt>Insulation</dt><dd>79%</dd></div>
+            <div><dt>Projectile</dt><dd>60%</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-hip-pack.png" alt="Hip pack shown in DayZ"></div>
+          <p class="card-index">03 / BELT</p>
+          <h3>HIP PACK</h3>
+          <dl class="clothing-properties">
+            <div><dt>Item size</dt><dd>4 × 2 slots</dd></div>
+            <div><dt>Storage</dt><dd>3 × 2 · 6 slots</dd></div>
+            <div><dt>Attachment</dt><dd>Canteen</dd></div>
+            <div><dt>Weight</dt><dd>0.5 kg</dd></div>
+            <div><dt>Insulation</dt><dd>49%</dd></div>
+            <div><dt>Projectile</dt><dd>10%</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-cargo-pants.png" alt="Cargo pants shown in DayZ"></div>
+          <p class="card-index">04 / LEGS</p>
+          <h3>CARGO PANTS</h3>
+          <dl class="clothing-properties">
+            <div><dt>Item size</dt><dd>4 × 3 slots</dd></div>
+            <div><dt>Storage</dt><dd>5 × 4 · 20 slots</dd></div>
+            <div><dt>Weight</dt><dd>0.53 kg</dd></div>
+            <div><dt>Insulation</dt><dd>100%</dd></div>
+            <div><dt>Projectile</dt><dd>80%</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-burlap-backpack.png" alt="Burlap backpack shown in DayZ"></div>
+          <p class="card-index">05 / BACK</p>
+          <h3>BURLAP BACKPACK</h3>
+          <dl class="clothing-properties">
+            <div><dt>Item size</dt><dd>4 × 5 slots</dd></div>
+            <div><dt>Storage</dt><dd>7 × 5 · 35 slots</dd></div>
+            <div><dt>Attachments</dt><dd>2 straps, 1 tool</dd></div>
+            <div><dt>Weight</dt><dd>2.4 kg</dd></div>
+            <div><dt>Insulation</dt><dd>100%</dd></div>
+            <div><dt>Projectile</dt><dd>40%</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-tactical-helmet.png" alt="Tactical helmet shown in DayZ"></div>
+          <p class="card-index">06 / HEAD</p>
+          <h3>TACTICAL HELMET</h3>
+          <dl class="clothing-properties">
+            <div><dt>Size</dt><dd>4 × 3 slots</dd></div>
+            <div><dt>Attachments</dt><dd>NVG, flashlight</dd></div>
+            <div><dt>Weight</dt><dd>1.2 kg</dd></div>
+            <div><dt>Protection</dt><dd>Projectile 25% · melee 75% · infected 100%</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-gas-mask.png" alt="Gas mask shown in DayZ"></div>
+          <p class="card-index">07 / FACE</p>
+          <h3>GAS MASK</h3>
+          <dl class="clothing-properties">
+            <div><dt>Storage</dt><dd>9 slots</dd></div>
+            <div><dt>Attachment</dt><dd>Gas mask filter</dd></div>
+            <div><dt>Weight</dt><dd>1.09 kg</dd></div>
+            <div><dt>Chemical</dt><dd>100% with working filter</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-tactical-gloves.png" alt="Tactical gloves shown in DayZ"></div>
+          <p class="card-index">08 / HANDS</p>
+          <h3>TACTICAL GLOVES</h3>
+          <dl class="clothing-properties">
+            <div><dt>Size</dt><dd>2 × 2 slots</dd></div>
+            <div><dt>Weight</dt><dd>0.454 kg</dd></div>
+            <div><dt>Insulation</dt><dd>79%</dd></div>
+            <div><dt>Projectile</dt><dd>60%</dd></div>
+          </dl>
+        </article>
+        <article class="clothing-card">
+          <div class="clothing-image"><img src="assets/clothing-combat-boots.png" alt="Combat boots shown in DayZ"></div>
+          <p class="card-index">09 / FEET</p>
+          <h3>COMBAT BOOTS</h3>
+          <dl class="clothing-properties">
+            <div><dt>Size</dt><dd>4 × 4 slots</dd></div>
+            <div><dt>Weight</dt><dd>1.2 kg</dd></div>
+            <div><dt>Insulation</dt><dd>49%</dd></div>
+            <div><dt>Projectile</dt><dd>70%</dd></div>
+          </dl>
+        </article>
+      </div>
+      <div class="clothing-condition-guide">
+        <div class="condition-intro">
+          <p class="eyebrow"><span></span> CONDITION // WETNESS</p>
+          <h3>THE SAME GEAR CAN <span>PERFORM DIFFERENTLY.</span></h3>
+          <p>Condition and wetness both change clothing insulation. Wet items also weigh more; dry them by a fire or in clear weather.</p>
+        </div>
+        <div class="condition-table-wrap">
+          <table class="condition-table">
+            <thead><tr><th>Condition</th><th>Insulation</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td>Pristine</td><td>100%</td><td>Full insulation</td></tr>
+              <tr><td>Worn</td><td>90%</td><td>Slightly reduced</td></tr>
+              <tr><td>Damaged</td><td>80%</td><td>Reduced</td></tr>
+              <tr><td>Badly damaged</td><td>50%</td><td>Heavily reduced</td></tr>
+              <tr><td>Ruined</td><td>0%</td><td>Cannot be repaired or equipped</td></tr>
+            </tbody>
+          </table>
+          <table class="condition-table wetness-table">
+            <thead><tr><th>Wetness</th><th>Weight</th><th>Insulation</th></tr></thead>
+            <tbody>
+              <tr><td>Damp</td><td>1.00×</td><td>90%</td></tr>
+              <tr><td>Wet</td><td>1.33×</td><td>50%</td></tr>
+              <tr><td>Soaked</td><td>1.66×</td><td>10%</td></tr>
+              <tr><td>Drenched</td><td>2.00×</td><td>−15%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="source-note clothing-source">Item values transcribed from the supplied clothing comparison notes (game version 1.29, July 2026). Condition and wetness modify insulation as shown.</p>
       </div>
     </section>
 
     <section class="section characters-section" id="characters">
       <div class="character-panel">
+        <video class="character-background-video" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
+          <source src="assets/survivor-story-background.mp4" type="video/mp4">
+        </video>
         <div>
           <p class="eyebrow"><span></span> 05 // YOUR SURVIVOR</p>
           <h2>EVERY SPAWN<br>IS A <span>NEW STORY.</span></h2>
@@ -208,10 +411,6 @@
             Start with almost nothing. Explore, learn the terrain, build your routine,
             and make decisions that shape every run.
           </p>
-        </div>
-        <div class="character-orbit" aria-hidden="true">
-          <div class="orbit-ring"></div>
-          <div class="survivor-silhouette">◒</div>
         </div>
       </div>
     </section>
@@ -237,14 +436,14 @@
         <h2>DOCUMENT THE <span>JOURNEY.</span></h2>
       </div>
       <div class="gallery-grid">
-        <button data-lightbox="assets/chernarus-map.png" data-caption="Chernarus terrain">
-          <img src="assets/chernarus-map.png" alt="Chernarus terrain">
+        <button data-lightbox="assets/map-chernarus.png" data-caption="Chernarus terrain">
+          <img src="assets/map-chernarus.png" alt="Chernarus terrain">
         </button>
-        <button data-lightbox="assets/livonia-map.png" data-caption="Livonia terrain">
-          <img src="assets/livonia-map.png" alt="Livonia terrain">
+        <button data-lightbox="assets/map-livonia.png" data-caption="Livonia terrain">
+          <img src="assets/map-livonia.png" alt="Livonia terrain">
         </button>
-        <button data-lightbox="assets/survival-stats.png" data-caption="Survival status system">
-          <img src="assets/survival-stats.png" alt="Survival status system">
+        <button data-lightbox="assets/survival-backdrop.svg" data-caption="Wilderness — field conditions">
+          <img src="assets/survival-backdrop.svg" alt="A forested wilderness under a muted green sky">
         </button>
       </div>
     </section>
@@ -269,7 +468,7 @@
       <div>
         <h4>Explore</h4>
         <a href="#about">About</a>
-        <a href="#gear">Gear</a>
+        <a href="#gear">Medical Kit</a>
         <a href="#maps">Maps</a>
         <a href="#clothing">Clothing</a>
       </div>
