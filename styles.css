@@ -416,6 +416,18 @@ main, .footer {
     linear-gradient(110deg,rgba(28,39,23,.94),rgba(11,17,9,.94));
 }
 .download-banner { background: rgba(20,29,17,.92); }
+.credits-section { background: rgba(9,15,8,.96); }
+.credits-content { width: min(900px, 100%); margin: 0 auto; }
+.credits-content h2 { font-size: clamp(48px, 7vw, 88px); margin-bottom: 28px; }
+.credits-story { max-width: 760px; color: #d0d3cc; font-size: 17px; line-height: 1.8; }
+.credits-sources { margin-top: 54px; padding-top: 28px; border-top: 1px solid var(--line); }
+.credits-sources h3 { margin-bottom: 20px; font: 700 22px var(--display); letter-spacing: 1px; }
+.credits-sources ul { display: grid; gap: 18px; padding-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.credits-sources li { padding-left: 5px; }
+.credits-sources strong { color: var(--text); }
+.credits-sources a { color: #e8b6ae; text-decoration: underline; text-underline-offset: 3px; }
+.credits-sources a:hover { color: #fff; }
+.credits-disclaimer { margin-top: 28px; color: #858b80; font-size: 12px; line-height: 1.8; }
 .footer {
   padding: 52px 5% 24px;
   background: rgba(9,15,8,.96);
