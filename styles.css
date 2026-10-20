@@ -208,6 +208,7 @@ h4.reveal.visible {
 .trailer-section { padding-top:40px; }
 .video-frame { aspect-ratio:16/9; border:1px solid var(--line); background:#000; box-shadow:0 25px 70px rgba(0,0,0,.45); }
 .video-frame iframe { width:100%; height:100%; border:0; }
+.video-frame video { display:block; width:100%; height:100%; }
 
 .gallery-section { padding-top:70px; }
 .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
