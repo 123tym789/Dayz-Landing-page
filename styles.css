@@ -377,7 +377,8 @@ main, .footer {
 }
 .hero {
   min-height: 100vh;
-  background: transparent;
+  background: #080a08 url("assets/dayz-hero.png") 50% 48% / cover no-repeat;
+  animation: hero-background-drift 30s ease-in-out infinite alternate;
 }
 .hero::before {
   content: "";
@@ -386,10 +387,10 @@ main, .footer {
   z-index: 0;
   background:
     radial-gradient(ellipse at 82% 48%, rgba(150,174,105,.13), transparent 36%),
-    linear-gradient(90deg, rgba(5,11,4,.58), rgba(5,11,4,.08) 74%);
+    linear-gradient(90deg, rgba(5,8,6,.94) 0%, rgba(5,8,6,.78) 42%, rgba(5,8,6,.3) 100%);
 }
 .hero::after {
-  background: linear-gradient(0deg, rgba(5,10,4,.78), transparent 25%, rgba(5,10,4,.18));
+  background: linear-gradient(0deg, rgba(5,10,4,.9) 0%, rgba(5,10,4,.72) 34%, rgba(5,10,4,.36) 62%, rgba(5,10,4,.18) 100%);
 }
 .hero-grid, .hero-glow { display: none; }
 .hero-content {
@@ -401,6 +402,16 @@ main, .footer {
 .hero-copy { color: #c0c1bf; }
 .hero-stats { gap: 28px; }
 .scroll-cue { right: 3vw; }
+
+@keyframes hero-background-drift {
+  from { background-position: 50% 48%; }
+  to { background-position: 52% 50%; }
+}
+
+@keyframes hero-background-drift-mobile {
+  from { background-position: 58% center; }
+  to { background-position: 60% center; }
+}
 
 .section {
   width: 100%;
@@ -485,6 +496,16 @@ main, .footer {
 
 @media (max-width: 650px) {
   .site-header { padding: 0 18px; }
+  .hero {
+    background-position: 58% center;
+    animation-name: hero-background-drift-mobile;
+  }
+  .hero::before {
+    background:
+      radial-gradient(ellipse at 82% 48%, rgba(150,174,105,.08), transparent 36%),
+      linear-gradient(180deg, rgba(5,8,6,.48), rgba(5,8,6,.68) 55%, rgba(5,8,6,.9)),
+      linear-gradient(90deg, rgba(5,8,6,.72), rgba(5,8,6,.28));
+  }
   .hero-content { width: calc(100% - 42px); margin: 0 auto; }
   .hero h1 { font-size: clamp(68px, 16vw, 92px); }
   .hero-copy { max-width: 460px; }
@@ -507,6 +528,9 @@ main, .footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none;
+  }
   h1.reveal,
   h2.reveal,
   h3.reveal,
